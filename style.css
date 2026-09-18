@@ -1,98 +1,158 @@
+/* =====================================
+   RESET
+===================================== */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#f4f4f4;
+    background:#dfe8f8;
     color:#333;
+    line-height:1.6;
 }
 
-/* ===== NAVBAR ===== */
+/* =====================================
+   NAVBAR
+===================================== */
 header{
-    background:#2847d8;
-    color:white;
-    padding:18px 8%;
+    background:#1d84f5;
+    position:sticky;
+    top:0;
+    z-index:999;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
 .navbar{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:18px 0;
+}
+
+.navbar h2{
+    color:white;
+    font-size:34px;
+    font-weight:700;
 }
 
 .navbar ul{
     display:flex;
     list-style:none;
-    gap:25px;
+    gap:28px;
 }
 
 .navbar a{
     color:white;
     text-decoration:none;
-    font-weight:bold;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
 }
 
-/* ===== HERO ===== */
+.navbar a:hover{
+    color:#d8ecff;
+}
+
+/* =====================================
+   HERO
+===================================== */
 .hero{
+    width:90%;
+    max-width:1200px;
+    margin:35px auto;
+    background:#f4f4f4;
+    border-radius:20px;
+    padding:45px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:60px 8%;
-    background:white;
+    gap:50px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
 
 .hero-text{
-    width:50%;
+    flex:1;
 }
 
-.hero-text h1{
-    font-size:40px;
+.hero h1{
+    font-size:52px;
+    line-height:1.15;
+    color:#222;
     margin-bottom:20px;
 }
 
-.hero-text p{
-    margin-bottom:20px;
-    line-height:1.7;
+.hero p{
+    font-size:18px;
+    color:#555;
+    margin-bottom:28px;
 }
 
 .hero button{
-    background:#2847d8;
+    background:#1d84f5;
     color:white;
     border:none;
-    padding:12px 24px;
-    border-radius:6px;
+    padding:14px 28px;
+    border-radius:8px;
+    font-size:16px;
     cursor:pointer;
+    transition:.3s;
+}
+
+.hero button:hover{
+    background:#0d6ed8;
 }
 
 .hero-image{
-    width:42%;
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .hero-image img{
     width:100%;
-    border-radius:10px;
+    max-width:430px;
+    height:auto;
+    object-fit:contain;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
-/* ===== ABOUT ===== */
-#about{
-    padding:60px 8%;
+/* =====================================
+   SECTION TITLE
+===================================== */
+#about,
+#portfolio{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:35px 0;
 }
 
-.title{
+.section-title{
     text-align:center;
-    font-size:32px;
+    color:#1d84f5;
+    font-size:38px;
+    font-weight:700;
     margin-bottom:8px;
 }
 
-.subtitle{
+.section-subtitle{
     text-align:center;
-    color:gray;
-    margin-bottom:35px;
+    color:#777;
+    margin-bottom:28px;
 }
 
+/* =====================================
+   BIODATA GRID
+===================================== */
 .biodata-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -101,45 +161,151 @@ header{
 
 .box{
     background:white;
-    padding:22px;
-    text-align:center;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
-}
-
-.box h4{
-    margin-bottom:10px;
-}
-
-/* ===== PORTFOLIO ===== */
-#portfolio{
-    padding:60px 8%;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
-}
-
-td{
-    border:1px solid #ddd;
-    text-align:center;
     padding:20px;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 5px 12px rgba(0,0,0,.08);
+    transition:.3s;
 }
 
-td img{
+.box:hover{
+    transform:translateY(-5px);
+}
+
+.box b{
+    display:block;
+    color:#1d84f5;
+    margin-bottom:8px;
+    font-size:15px;
+}
+
+.box p{
+    font-size:14px;
+    color:#555;
+}
+
+/* =====================================
+   PORTFOLIO GRID
+===================================== */
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
     width:100%;
     height:180px;
     object-fit:cover;
-    border-radius:6px;
 }
 
-/* ===== FOOTER ===== */
+.card h3{
+    text-align:center;
+    color:#1d84f5;
+    padding:14px 10px 6px;
+}
+
+.card p{
+    text-align:center;
+    color:#666;
+    padding-bottom:18px;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
 footer{
-    background:#2847d8;
+    margin-top:35px;
+    background:#1d84f5;
     color:white;
     text-align:center;
-    padding:20px;
-    margin-top:30px;
+    padding:18px;
+    font-size:14px;
+}
+
+/* =====================================
+   RESPONSIVE TABLET
+===================================== */
+@media (max-width:992px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .biodata-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .portfolio-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* =====================================
+   RESPONSIVE MOBILE
+===================================== */
+@media (max-width:600px){
+
+    .navbar{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .navbar ul{
+        gap:16px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .navbar h2{
+        font-size:28px;
+    }
+
+    .hero{
+        padding:25px;
+        gap:25px;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .biodata-grid{
+        grid-template-columns:1fr;
+    }
+
+    .portfolio-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title{
+        font-size:30px;
+    }
+
 }
